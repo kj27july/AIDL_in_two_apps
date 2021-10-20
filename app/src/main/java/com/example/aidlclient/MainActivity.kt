@@ -12,6 +12,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.aidlserver.IAdd
+import com.example.aidlserver.Numbers
+
+//import com.example.aidlclient.Numbers
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var num1: EditText
@@ -32,7 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btnAdd.setOnClickListener(this)
         initConnection()
     }
-    
+
     private fun initConnection() {
 
             val intent = Intent(IAdd::class.java.name)
@@ -49,7 +52,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
-        total.text = (addService.addNumbers(num1.text.toString().toInt(), num2.text.toString().toInt())).toString()
+        //total.text = (addService.addNumbers(num1.text.toString().toInt(), num2.text.toString().toInt())).toString()
+        var nums= Numbers(num1.text.toString().toInt(),num2.text.toString().toInt())
+        total.text = (addService.getNumbers(nums)).toString()
+//        total.text=addService.getNumbers()
     }
 
     private val serviceConnection: ServiceConnection = object : ServiceConnection {
