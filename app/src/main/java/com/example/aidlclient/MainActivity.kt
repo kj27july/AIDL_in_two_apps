@@ -14,8 +14,6 @@ import android.widget.TextView
 import com.example.aidlserver.IAdd
 import com.example.aidlserver.Numbers
 
-//import com.example.aidlclient.Numbers
-
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var num1: EditText
     lateinit var num2: EditText
