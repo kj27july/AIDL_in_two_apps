@@ -22,15 +22,6 @@ class AdditionService : Service() {
         override fun getNumbers(num:Numbers):Int{
             Log.d("kajal", "getNumbers: "+num.num1+num.num2)
             return  num.num1+num.num2
-
         }
-
-//        @Throws(RemoteException::class)
-//        override fun getPersonList(): List<Person> {
-//            return MainActivity.getPerson()
-//        }
-
-
-
     }
 }
